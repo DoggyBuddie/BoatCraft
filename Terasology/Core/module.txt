@@ -1,0 +1,7 @@
+{
+	"id" : "BoatCraft:Core",
+	"version" : "1.0.0",
+	"author" : "Kepler Sticka-Jones <kbsj269@gmail.com>,
+	"description" : "I'm on a muthafuckin' boat.",
+	"isServerSideOnly" : false
+}
