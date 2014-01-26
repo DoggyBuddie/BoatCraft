@@ -72,3 +72,17 @@ project (':Minecraft') {
         }
     }
 }
+
+project (':Terasology') {
+    repositories {
+        maven {
+            name = "Terasology"
+            url = "http://www.movingblocks.net:8081/artifactory/repo"
+        }
+    }
+    allprojects {
+        dependencies {
+            compile 'org.terasology.engine:engine:0.1.0-SNAPSHOT'
+        }
+    }
+}
