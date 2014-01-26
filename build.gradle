@@ -1,3 +1,8 @@
+apply plugin: 'java'
+apply plugin: 'scala'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
 buildscript {
     repositories {
         mavenCentral()
@@ -18,12 +23,8 @@ buildscript {
 }
 
 allprojects {
-    apply plugin: 'java'
-    apply plugin: 'scala'
     apply plugin: 'cobertura'
     apply plugin: 'coveralls'
-    apply plugin: 'idea'
-    apply plugin: 'eclipse'
 
     group = 'k2b6s9j.BoatCraft'
     version = '2.0'
@@ -54,17 +55,19 @@ allprojects {
     }
 }
 
-project (':Forge') {
-    apply plugin: 'forge'
+project (':Minecraft') {
+    project (':Minecraft:Forge') {
+        apply plugin: 'forge'
     
-    minecraft {
-        version = '1.7.2-10.12.0.1012'
-    }
+        minecraft {
+            version = '1.7.2-10.12.0.1012'
+        }
     
-    project (':Forge:Compatibility') {
-        allprojects {
-            dependencies {
-                compile project (':Forge:Core')
+        project (':Minecraft:Forge:Compatibility') {
+            allprojects {
+                dependencies {
+                    compile project (':Minecraft:Forge:Core')
+                }
             }
         }
     }
